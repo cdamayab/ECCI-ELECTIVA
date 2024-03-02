@@ -14,7 +14,11 @@ B = -5.775e-7
 C = -4.183e-12
 
 def resistencia_pt100(temperatura):
-    return R0 * (1 + A * temperatura + B * temperatura**2 + C * (temperatura - 100) * temperatura**3)
+    resistencia = np.zeros_like(temperatura)  
+    mask = temperatura >= 0  # Máscara booleana para temperaturas mayores o iguales a 0
+    resistencia[mask] = R0 * (1 + A * temperatura[mask] + B * temperatura[mask] ** 2)
+    resistencia[~mask] = R0 * (1 + A * temperatura[~mask] + B * temperatura[~mask] ** 2 + C * (temperatura[~mask] - 100) * temperatura[~mask] ** 3)
+    return resistencia
 
 # Calcular la resistencia para cada temperatura en el rango especificado
 resistencias = resistencia_pt100(temperaturas)

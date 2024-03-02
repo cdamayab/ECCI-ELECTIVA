@@ -13,18 +13,18 @@ opcion = int(input("Ingrese el número correspondiente al tipo de robot: "))
 
 if opcion == 1:
     tipo_robot = "Cilíndrico"
-    tipo_articulaciones = "Rotativo o Prismático"
+    tipo_articulaciones = "1 articulación rotacional y dos prismáticas prismáticas"
     numero_articulaciones = "2"
 elif opcion == 2:
     tipo_robot = "Cartesiano"
-    tipo_articulaciones = "Prismático"
+    tipo_articulaciones = "3 articulaciones prismáticas"
     numero_articulaciones = "3"
 elif opcion == 3:
     tipo_robot = "Esférico"
-    tipo_articulaciones = "Rotativo"
+    tipo_articulaciones = "2 articulaciones rotacionales y 1 prismáticas"
     numero_articulaciones = "3"
 else:
     print("Opción no válida")
     exit()
 
-print("El robot", tipo_robot, "posee articulaciones de tipo ", tipo_articulaciones, "y tiene", numero_articulaciones, "articulaciones.")
+print("El robot", tipo_robot, "posee ", tipo_articulaciones, ", tiene", numero_articulaciones, "articulaciones.")

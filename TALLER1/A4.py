@@ -24,8 +24,13 @@ def calcular_resistencia_PT100(temperatura):
     C = -4.183e-12
     
     T = temperatura
-    
-    R = R0 * (1 + A * T + B * T**2 + C * (T - 100) * T**3)
+    R = 0 
+
+    if T >= 0:
+        R = R0 * (1 + A * T + B * T ** 2)
+    else:
+        R = R0 * (1 + A * T + B * T ** 2 + C * (T - 100) * T ** 3)
+
     return R
 
 temperatura = 25  # Temperatura en grados Celsius

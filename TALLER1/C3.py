@@ -10,7 +10,7 @@ V0 = float(input("Ingrese el voltaje inicial (V): "))
 C = float(input("Ingrese la capacitancia (μF): "))
 R = float(input("Ingrese la resistencia (Ω): "))
 
-tau = R * C     # Constante de tiempo (RC)
+tau = R * C*1e-6     # Constante de tiempo (RC)
 t = np.linspace(0, 5 * tau, 1000) # Rango de tiempo para la gráfica
 
 # Calcular el voltaje para carga y descarga
